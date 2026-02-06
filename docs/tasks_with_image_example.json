@@ -1,0 +1,17 @@
+[
+  {
+    "prompt": "一只猫火龙在城市里睡觉",
+    "image": "https://c-ssl.dtstatic.com/uploads/item/202006/06/20200606172301_ieWQk.thumb.1000_0.jpeg",
+    "model": null
+  },
+  {
+    "prompt": "未来科技城市的夜景",
+    "image": "https://example.com/city-night.jpg",
+    "model": null
+  },
+  {
+    "prompt": "只有提示词，没有图片",
+    "image": null,
+    "model": null
+  }
+]

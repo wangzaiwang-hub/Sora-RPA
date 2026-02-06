@@ -1,0 +1,136 @@
+body {
+  width: 500px;
+  max-height: 600px;
+  padding: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  overflow-y: auto;
+}
+
+h2 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab.active {
+  color: #0066cc;
+  border-bottom-color: #0066cc;
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.video-item {
+  padding: 8px;
+  margin-bottom: 6px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.video-url {
+  color: #0066cc;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.video-url:hover {
+  text-decoration: underline;
+}
+
+.progress {
+  color: #ff6b00;
+  font-weight: 600;
+}
+
+.count {
+  background: #0066cc;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.empty {
+  color: #999;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.refresh-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.refresh-btn:hover {
+  background: #0052a3;
+}
+
+.log-item {
+  padding: 6px;
+  margin-bottom: 4px;
+  background: #f9f9f9;
+  border-left: 3px solid #ccc;
+  font-size: 11px;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.log-item.success { border-left-color: #4caf50; }
+.log-item.error { border-left-color: #f44336; }
+.log-item.warning { border-left-color: #ff9800; }
+.log-item.network { border-left-color: #2196f3; }
+.log-item.data { border-left-color: #9c27b0; }
+
+.log-time {
+  color: #999;
+  margin-right: 8px;
+}
+
+.log-message {
+  color: #333;
+}

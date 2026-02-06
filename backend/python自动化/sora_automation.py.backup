@@ -1,0 +1,1018 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Sora 自动化核心模�?
+使用 ixBrowser 官方 API + Selenium
+"""
+
+import time
+from ixbrowser_local_api import IXBrowserClient
+from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+class SoraAutomation:
+    def __init__(self, profile_id=None):
+        """
+        初始�?Sora 自动化工�?
+        
+        Args:
+            profile_id: ixBrowser 窗口 ID，如果为 None 则使用第一个窗�?
+        """
+        self.client = IXBrowserClient()
+        self.profile_id = profile_id
+        self.driver = None
+        self.debugging_address = None
+        self.is_mobile = None  # 是否为手机UA
+        
+    def _get_profile_id(self):
+        """获取窗口 ID - 优先使用窗口 23"""
+        if self.profile_id:
+            return self.profile_id
+        
+        # 直接尝试使用窗口 23
+        print('  尝试使用窗口 23...')
+        
+        # 验证窗口 23 是否存在
+        all_profiles = self.client.get_profile_list(limit=100)
+        if all_profiles:
+            for profile in all_profiles:
+                if profile['profile_id'] == 23:
+                    print(f'  �?找到窗口 23: {profile.get("name")}')
+                    return 23
+        
+        # 如果没找到，直接返回 23（让后续流程尝试打开�?
+        print('  ⚠️  窗口 23 不在列表中，但仍尝试使用')
+        return 23
+    
+    def _open_browser(self):
+        """打开浏览器窗�?""
+        profile_id = self._get_profile_id()
+        
+        print(f'  连接�?ixBrowser 窗口: {profile_id}')
+        
+        # 尝试打开窗口（如果已打开会返回错误，但我们会处理�?
+        open_result = self.client.open_profile(
+            profile_id,
+            cookies_backup=False,
+            load_profile_info_page=False
+        )
+        
+        # 如果窗口已经打开
+        if open_result is None and self.client.message:
+            error_msg = str(self.client.message).lower()
+            if 'already open' in error_msg or '已经打开' in error_msg or '已打开' in error_msg:
+                print('  �?窗口已打开，获取连接信�?..')
+                
+                # 再次尝试调用 API，有时会返回连接信息
+                time.sleep(0.5)
+                open_result = self.client.open_profile(
+                    profile_id,
+                    cookies_backup=False,
+                    load_profile_info_page=False
+                )
+                
+                # 如果还是失败，说明无法获取连接信息，需要重启窗�?
+                if open_result is None:
+                    print('  ⚠️  无法获取连接信息，尝试重启窗�?)
+                    print('  关闭窗口...')
+                    
+                    close_result = self.client.close_profile(profile_id)
+                    if close_result:
+                        print('  �?窗口已关�?)
+                        time.sleep(3)
+                    else:
+                        print(f'  ⚠️  关闭失败: {self.client.message}')
+                        print('  ⚠️  窗口可能不是通过 API 打开的，无法控制')
+                        print('  提示: 请手动关闭窗口，或使用其他窗�?)
+                        raise Exception(f'无法控制已打开的窗�?{profile_id}，请手动关闭或选择其他窗口')
+                    
+                    print('  重新打开窗口...')
+                    open_result = self.client.open_profile(
+                        profile_id,
+                        cookies_backup=False,
+                        load_profile_info_page=False
+                    )
+                    
+                    if open_result is None:
+                        raise Exception(f'打开窗口失败: {self.client.message}')
+                    
+                    print('  �?窗口已重新打开')
+            else:
+                # 其他错误
+                raise Exception(f'打开窗口失败: {self.client.message}')
+        
+        else:
+            # 窗口成功打开
+            print('  �?窗口已打开')
+        
+        # 获取连接信息
+        web_driver_path = open_result['webdriver']
+        self.debugging_address = open_result['debugging_address']
+        
+        print(f'  调试地址: {self.debugging_address}')
+        
+        # 连接到浏览器
+        chrome_options = Options()
+        chrome_options.add_experimental_option("debuggerAddress", self.debugging_address)
+        
+        self.driver = Chrome(
+            service=Service(web_driver_path),
+            options=chrome_options
+        )
+        
+        print('  �?Selenium 已连�?)
+        
+        # 检测UA类型
+        self._detect_ua_type()
+    
+    def _detect_ua_type(self):
+        """检测UA类型（电脑或手机�?""
+        try:
+            user_agent = self.driver.execute_script("return navigator.userAgent;")
+            print(f'  User Agent: {user_agent}')
+            
+            # 检测是否为移动设备UA
+            mobile_keywords = ['Mobile', 'Android', 'iPhone', 'iPad', 'iPod', 'Windows Phone']
+            self.is_mobile = any(keyword in user_agent for keyword in mobile_keywords)
+            
+            print(f'  UA类型: {"手机" if self.is_mobile else "电脑"}')
+        except Exception as e:
+            print(f'  检测UA失败: {e}，默认使用电脑模�?)
+            self.is_mobile = False
+    
+    def _check_login_status(self):
+        """检测窗口是否已登录"""
+        try:
+            print('  检测登录状�?..')
+            
+            # 等待页面加载
+            time.sleep(2)
+            
+            current_url = self.driver.current_url
+            print(f'  当前页面: {current_url}')
+            
+            # 检查是否在 Sora 页面
+            if 'sora.chatgpt.com' in current_url.lower():
+                print('  �?已在 Sora 页面，账号已登录')
+                return True
+            
+            # 检查是否在登录页面
+            if 'auth' in current_url.lower() or 'login' in current_url.lower():
+                print('  ⚠️  在登录页面，需要登�?)
+                return False
+            
+            # 尝试访问 Sora 页面来验证登录状�?
+            print('  尝试访问 Sora 页面验证登录状�?..')
+            self.driver.get('https://sora.chatgpt.com/explore')
+            time.sleep(3)
+            
+            current_url = self.driver.current_url
+            if 'sora.chatgpt.com' in current_url.lower():
+                print('  �?成功访问 Sora 页面，账号已登录')
+                return True
+            else:
+                print('  ⚠️  无法访问 Sora 页面，需要登�?)
+                return False
+                
+        except Exception as e:
+            print(f'  检测登录状态失�? {e}')
+            return False
+    
+    def _login_account(self, username: str, password: str):
+        """登录账号"""
+        try:
+            print(f'  开始登录账�? {username}')
+            
+            # 导航到登录页�?
+            self.driver.get('https://chatgpt.com/auth/login')
+            time.sleep(3)
+            
+            # 这里需要根据实际的登录页面结构来实现登录逻辑
+            # 由于 ChatGPT 的登录流程比较复杂，建议手动登录一�?
+            # 或者使�?cookies 来保持登录状�?
+            
+            print('  ⚠️  请手动完成登录流�?)
+            print('  提示: 建议�?ixBrowser 中预先登录账号，系统会自动检测登录状�?)
+            
+            # 等待用户手动登录（可选）
+            # input('  登录完成后按回车继续...')
+            
+            return True
+            
+        except Exception as e:
+            print(f'  登录失败: {e}')
+            return False
+    
+    def _navigate_to_sora(self):
+        """导航�?Sora 页面"""
+        sora_url = 'https://sora.chatgpt.com/explore'
+        
+        try:
+            # 等待页面加载完成
+            time.sleep(1)
+            
+            current_url = self.driver.current_url
+            print(f'  当前页面: {current_url}')
+            
+            # 检查是否已经在 Sora 页面
+            if 'sora.chatgpt.com' in current_url.lower():
+                print('  �?已在 Sora 页面，跳过导�?)
+                return
+            
+            # 需要导航到 Sora
+            print(f'  导航�?Sora: {sora_url}')
+            
+            # 设置页面加载超时
+            self.driver.set_page_load_timeout(30)
+            
+            try:
+                self.driver.get(sora_url)
+            except Exception as nav_error:
+                print(f'  ⚠️  导航超时或失�? {nav_error}')
+                # 尝试停止加载
+                try:
+                    self.driver.execute_script("window.stop();")
+                except:
+                    pass
+            
+            # 等待页面加载
+            time.sleep(3)
+            
+            # 验证导航成功
+            try:
+                new_url = self.driver.current_url
+                if 'sora.chatgpt.com' in new_url.lower():
+                    print('  �?导航完成')
+                else:
+                    print(f'  ⚠️  当前 URL: {new_url}')
+                    print('  提示: 可能需要手动登录或处理页面')
+            except:
+                print('  ⚠️  无法获取当前 URL')
+            
+        except Exception as e:
+            print(f'  ⚠️  导航时出现问�? {e}')
+            # 不抛出异常，继续执行
+            print('  尝试继续...')
+    
+    def _click_create_button(self):
+        """点击创建视频按钮"""
+        try:
+            print('  查找"创建视频"按钮...')
+            # 查找"创建视频"按钮
+            buttons = self.driver.find_elements(By.TAG_NAME, 'button')
+            for btn in buttons:
+                try:
+                    if '创建视频' in btn.text or 'Create' in btn.text:
+                        print('  点击"创建视频"按钮')
+                        btn.click()
+                        time.sleep(2)
+                        return True
+                except:
+                    continue
+            
+            print('  未找�?创建视频"按钮，可能已在创建页�?)
+            return True  # 返回 True 继续执行
+        except Exception as e:
+            print(f'  查找按钮时出�? {e}')
+            return True  # 返回 True 继续执行
+    
+    def _input_prompt(self, prompt):
+        """输入提示�?- 根据UA类型使用不同策略"""
+        print('  输入提示�?..')
+        print(f'  提示词内�? {prompt[:100]}{"..." if len(prompt) > 100 else ""}')
+        print(f'  提示词长�? {len(prompt)} 字符')
+        print(f'  当前UA类型: {"手机" if self.is_mobile else "电脑"}')
+        
+        if self.is_mobile:
+            return self._input_prompt_mobile(prompt)
+        else:
+            return self._input_prompt_desktop(prompt)
+    
+    def _input_prompt_mobile(self, prompt):
+        """手机UA的输入策�?- JavaScript输入 + 真实点击混合"""
+        print('  使用手机UA输入策略（JavaScript + 真实点击混合�?..')
+        print('  [DEBUG] 开始执行手机端输入流程')
+        print('  [INFO] 手机端send_keys会卡住，使用JavaScript输入')
+        
+        try:
+            from selenium.webdriver.common.keys import Keys
+            
+            # 等待页面完全加载
+            print('  [DEBUG] 等待页面加载...')
+            time.sleep(3)
+            print('  [DEBUG] 页面加载完成')
+            
+            # 查找输入�?- 使用多种方法
+            print('  [DEBUG] 查找输入�?..')
+            textarea = None
+            
+            # 方法1: 通过placeholder包含"Describe"
+            try:
+                print('  [DEBUG] 方法1: 通过placeholder查找...')
+                textarea = self.driver.find_element(By.CSS_SELECTOR, 'textarea[placeholder*="Describe"]')
+                print('  �?找到输入框（方法1: placeholder包含Describe�?)
+            except Exception as e:
+                print(f'  [DEBUG] 方法1失败: {e}')
+            
+            # 方法2: 通过placeholder包含"video"
+            if not textarea:
+                try:
+                    print('  [DEBUG] 方法2: 通过placeholder包含video查找...')
+                    textarea = self.driver.find_element(By.CSS_SELECTOR, 'textarea[placeholder*="video"]')
+                    print('  �?找到输入框（方法2: placeholder包含video�?)
+                except Exception as e:
+                    print(f'  [DEBUG] 方法2失败: {e}')
+            
+            # 方法3: 通过class包含rounded-md的textarea
+            if not textarea:
+                try:
+                    print('  [DEBUG] 方法3: 通过class查找...')
+                    textarea = self.driver.find_element(By.CSS_SELECTOR, 'textarea.rounded-md')
+                    print('  �?找到输入框（方法3: class包含rounded-md�?)
+                except Exception as e:
+                    print(f'  [DEBUG] 方法3失败: {e}')
+            
+            # 方法4: 查找所有textarea，使用第一个可见的
+            if not textarea:
+                try:
+                    print('  [DEBUG] 方法4: 查找所有textarea...')
+                    textareas = self.driver.find_elements(By.TAG_NAME, 'textarea')
+                    print(f'  [DEBUG] 找到 {len(textareas)} �?textarea 元素')
+                    
+                    for i, ta in enumerate(textareas):
+                        try:
+                            if ta.is_displayed():
+                                textarea = ta
+                                print(f'  �?找到输入框（方法4: 第{i+1}个可见textarea�?)
+                                break
+                        except:
+                            continue
+                except Exception as e:
+                    print(f'  [DEBUG] 方法4失败: {e}')
+            
+            # 如果还是没找到，报错
+            if not textarea:
+                print('  [ERROR] 所有方法都未找到输入框')
+                screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                self.driver.save_screenshot(screenshot_path)
+                print(f'  已保存截�? {screenshot_path}')
+                
+                # 打印页面源码的一部分，帮助调�?
+                try:
+                    page_source = self.driver.page_source
+                    if 'textarea' in page_source.lower():
+                        print('  [DEBUG] 页面中存在textarea元素')
+                        # 查找textarea相关的HTML片段
+                        import re
+                        textareas_html = re.findall(r'<textarea[^>]*>', page_source, re.IGNORECASE)
+                        for i, html in enumerate(textareas_html[:3]):  # 只显示前3�?
+                            print(f'  [DEBUG] Textarea {i+1}: {html[:200]}')
+                    else:
+                        print('  [DEBUG] 页面中不存在textarea元素')
+                except:
+                    pass
+                
+                raise Exception('未找到任何输入框')
+            
+            # 检查输入框是否可见
+            print('  [DEBUG] 检查输入框可见�?..')
+            try:
+                is_displayed = textarea.is_displayed()
+                print(f'  [DEBUG] 输入框可见�? {is_displayed}')
+                
+                if not is_displayed:
+                    print('  ⚠️  输入框不可见，尝试滚动到视图')
+                    self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", textarea)
+                    time.sleep(1)
+            except Exception as e:
+                print(f'  [DEBUG] 检查可见性失�? {e}')
+            
+            print('  �?找到输入框，准备输入')
+            
+            # 步骤1: 真实点击输入框（重要：先建立真实交互�?
+            print('  [DEBUG] 真实点击输入�?..')
+            for i in range(3):
+                try:
+                    textarea.click()
+                    time.sleep(0.5)
+                    print(f'  �?第{i+1}次点击完�?)
+                except Exception as e:
+                    print(f'  [DEBUG] 第{i+1}次点击失�? {e}')
+            
+            # 步骤2: 使用JavaScript输入（避免send_keys卡住�?
+            print('  [DEBUG] 使用JavaScript输入提示�?..')
+            print(f'  [DEBUG] 提示�? {prompt[:50]}{"..." if len(prompt) > 50 else ""}')
+            try:
+                self.driver.execute_script("""
+                    var textarea = arguments[0];
+                    var text = arguments[1];
+                    
+                    // 清空
+                    textarea.value = '';
+                    
+                    // 聚焦
+                    textarea.focus();
+                    
+                    // 设置�?
+                    textarea.value = text;
+                    
+                    // 触发事件（模拟真实输入）
+                    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+                    textarea.dispatchEvent(new Event('change', { bubbles: true }));
+                    
+                    // 保持焦点
+                    textarea.focus();
+                """, textarea, prompt)
+                time.sleep(0.5)
+                print('  �?JavaScript输入完成')
+            except Exception as e:
+                print(f'  [ERROR] JavaScript输入失败: {e}')
+                raise
+            
+            # 验证输入
+            print('  [DEBUG] 验证输入结果...')
+            current_value = textarea.get_attribute('value') or ''
+            print(f'  验证输入结果: 当前长度 {len(current_value)}, 目标长度 {len(prompt)}')
+            
+            if len(current_value) == 0:
+                print('  ⚠️  输入验证失败，输入框仍为�?)
+                screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                self.driver.save_screenshot(screenshot_path)
+                print(f'  已保存截�? {screenshot_path}')
+                raise Exception('输入后验证失败，输入框仍为空')
+            
+            print(f'  �?输入验证成功（当前长�? {len(current_value)}�?)
+            
+            # 步骤3: 关键 - 多次真实点击输入框（激活发送按�?+ 掩盖脚本特征�?
+            print('  [DEBUG] 多次真实点击输入框（激活发送按钮）...')
+            for i in range(8):  # 增加�?次，确保按钮激�?
+                try:
+                    textarea.click()
+                    time.sleep(0.5)  # 增加间隔，更像真�?
+                    print(f'  �?第{i+1}次点击完�?)
+                except Exception as e:
+                    print(f'  [DEBUG] 第{i+1}次点击失�? {e}')
+            
+            # 步骤4: 等待发送按钮激�?
+            print('  [DEBUG] 等待发送按钮激�?..')
+            time.sleep(2)
+            
+            # 步骤5: 查找并点击发送按�?
+            print('  [DEBUG] 查找发送按�?..')
+            send_success = False
+            
+            try:
+                buttons = self.driver.find_elements(By.TAG_NAME, 'button')
+                print(f'  找到 {len(buttons)} 个按钮元�?)
+                
+                for btn in buttons:
+                    try:
+                        disabled = btn.get_attribute('disabled')
+                        aria_disabled = btn.get_attribute('aria-disabled')
+                        
+                        if not disabled and aria_disabled != 'true':
+                            if btn.is_displayed():
+                                class_name = btn.get_attribute('class') or ''
+                                
+                                if 'rounded-full' in class_name:
+                                    print(f'  [DEBUG] 找到发送按钮，点击...')
+                                    btn.click()
+                                    time.sleep(1)
+                                    print('  �?发送按钮已点击')
+                                    send_success = True
+                                    break
+                    except:
+                        continue
+                        
+            except Exception as e:
+                print(f'  [DEBUG] 查找按钮失败: {e}')
+            
+            # 如果没找到按钮，使用JavaScript触发回车
+            if not send_success:
+                print('  [DEBUG] 未找到发送按钮，使用JavaScript触发回车...')
+                try:
+                    self.driver.execute_script("""
+                        var textarea = arguments[0];
+                        textarea.focus();
+                        var event = new KeyboardEvent('keydown', {
+                            key: 'Enter',
+                            code: 'Enter',
+                            keyCode: 13,
+                            which: 13,
+                            bubbles: true,
+                            cancelable: true
+                        });
+                        textarea.dispatchEvent(event);
+                    """, textarea)
+                    time.sleep(1)
+                    print('  �?JavaScript触发回车完成')
+                    send_success = True
+                except Exception as e:
+                    print(f'  [DEBUG] JavaScript回车失败: {e}')
+            
+            if not send_success:
+                print('  [WARNING] 无法确认消息是否发�?)
+            
+            print('  [DEBUG] 手机端输入流程完�?)
+            return True
+            
+        except Exception as e:
+            print(f'  [ERROR] 手机UA输入失败: {e}')
+            print(f'  [ERROR] 错误类型: {type(e).__name__}')
+            import traceback
+            print('  [ERROR] 完整堆栈:')
+            traceback.print_exc()
+            try:
+                screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                self.driver.save_screenshot(screenshot_path)
+                print(f'  已保存错误截�? {screenshot_path}')
+            except Exception as e2:
+                print(f'  [ERROR] 保存截图失败: {e2}')
+            raise
+                
+    def _input_prompt_desktop(self, prompt):
+        """电脑UA的输入策�?- 真实点击和键盘输�?""
+        print('  使用电脑UA输入策略...')
+        
+        try:
+            # 等待页面完全加载
+            time.sleep(2)
+            
+            # 方法1: 通过 placeholder 精确查找输入�?
+            print('  尝试通过 placeholder 查找输入�?..')
+            try:
+                textarea = self.driver.find_element(By.CSS_SELECTOR, 'textarea[placeholder*="Describe your video"]')
+                print('  �?找到输入框（通过 placeholder�?)
+            except:
+                print('  未找到带 placeholder 的输入框，尝试其他方�?..')
+                # 方法2: 查找所�?textarea
+                textareas = self.driver.find_elements(By.TAG_NAME, 'textarea')
+                print(f'  找到 {len(textareas)} �?textarea 元素')
+                
+                if not textareas:
+                    # 保存截图帮助调试
+                    screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                    self.driver.save_screenshot(screenshot_path)
+                    print(f'  已保存截�? {screenshot_path}')
+                    raise Exception('未找到任何输入框')
+                
+                textarea = textareas[0]  # 使用第一�?
+                print('  使用第一�?textarea 元素')
+            
+            # 检查元素是否可�?
+            if not textarea.is_displayed():
+                print('  ⚠️  输入框不可见')
+                screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                self.driver.save_screenshot(screenshot_path)
+                print(f'  已保存截�? {screenshot_path}')
+                raise Exception('输入框不可见')
+            
+            print('  找到输入框，准备输入')
+            
+            # 步骤1: 先清空输入框
+            print('  清空输入�?..')
+            try:
+                textarea.clear()
+                time.sleep(0.3)
+                print('  �?输入框已清空')
+            except Exception as e:
+                print(f'  清空输入框失�? {e}，继续执�?..')
+            
+            # 步骤2: 真实点击输入框（激活输入框�?
+            print('  真实点击输入框（激活）...')
+            try:
+                textarea.click()
+                time.sleep(0.5)
+                print('  �?输入框已激�?)
+            except Exception as e:
+                print(f'  点击输入框失�? {e}')
+                raise
+            
+            # 步骤3: 使用 send_keys 真实输入（模拟键盘输入）
+            print('  使用 send_keys 真实输入...')
+            from selenium.webdriver.common.keys import Keys
+            try:
+                textarea.send_keys(prompt)
+                time.sleep(0.5)
+                print('  �?提示词已输入')
+            except Exception as e:
+                print(f'  输入失败: {e}')
+                raise
+            
+            # 验证输入是否成功
+            current_value = textarea.get_attribute('value') or ''
+            print(f'  验证输入结果: 当前长度 {len(current_value)}, 目标长度 {len(prompt)}')
+            
+            if len(current_value) == 0:
+                print('  ⚠️  输入验证失败，输入框仍为�?)
+                screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                self.driver.save_screenshot(screenshot_path)
+                print(f'  已保存截�? {screenshot_path}')
+                raise Exception('输入后验证失败，输入框仍为空')
+            
+            print(f'  �?输入验证成功（当前长�? {len(current_value)}�?)
+            
+            # 步骤4: 再次点击输入框（确保焦点在输入框上）
+            print('  再次点击输入框（确保焦点�?..')
+            try:
+                textarea.click()
+                time.sleep(0.3)
+                print('  �?焦点已确�?)
+            except Exception as e:
+                print(f'  再次点击失败: {e}，继续执�?..')
+            
+            # 步骤5: 按回车键发�?
+            print('  按回车键发�?..')
+            try:
+                textarea.send_keys(Keys.RETURN)
+                time.sleep(1)
+                print('  �?已按回车键发�?)
+            except Exception as e:
+                print(f'  按回车键失败: {e}')
+                raise
+            
+            return True
+            
+        except Exception as e:
+            print(f'  电脑UA输入失败: {e}')
+            print(f'  错误类型: {type(e).__name__}')
+            import traceback
+            traceback.print_exc()
+            # 尝试截图保存错误状�?
+            try:
+                screenshot_path = f'error_screenshot_{int(time.time())}.png'
+                self.driver.save_screenshot(screenshot_path)
+                print(f'  已保存错误截�? {screenshot_path}')
+            except:
+                pass
+            raise
+    
+    def _click_send_button(self):
+        """点击发送按�?""
+        print('  查找发送按�?..')
+        
+        try:
+            # 方法1: 查找�?sr-only 的按�?
+            buttons = self.driver.find_elements(By.TAG_NAME, 'button')
+            print(f'  找到 {len(buttons)} 个按钮元�?)
+            
+            for btn in buttons:
+                try:
+                    sr_only_elements = btn.find_elements(By.CLASS_NAME, 'sr-only')
+                    for sr_only in sr_only_elements:
+                        if '创建视频' in sr_only.text or 'Create' in sr_only.text:
+                            disabled = btn.get_attribute('data-disabled')
+                            aria_disabled = btn.get_attribute('aria-disabled')
+                            if disabled != 'true' and aria_disabled != 'true':
+                                print('  找到发送按钮（sr-only方法），尝试点击...')
+                                try:
+                                    # 使用 JavaScript 点击，更可靠
+                                    self.driver.execute_script("arguments[0].click();", btn)
+                                    print('  �?发送按钮已点击（JavaScript�?)
+                                    time.sleep(1)
+                                    return True
+                                except:
+                                    # 如果 JS 点击失败，尝试常规点�?
+                                    btn.click()
+                                    print('  �?发送按钮已点击（常规方法）')
+                                    time.sleep(1)
+                                    return True
+                except:
+                    continue
+            
+            # 方法2: 查找圆形按钮
+            print('  尝试查找圆形按钮...')
+            for btn in buttons:
+                try:
+                    class_name = btn.get_attribute('class') or ''
+                    if 'rounded-full' in class_name:
+                        disabled = btn.get_attribute('data-disabled')
+                        aria_disabled = btn.get_attribute('aria-disabled')
+                        is_disabled = btn.get_attribute('disabled')
+                        
+                        if disabled != 'true' and aria_disabled != 'true' and not is_disabled:
+                            print(f'  找到圆形按钮，class: {class_name[:50]}...')
+                            try:
+                                # 使用 JavaScript 点击
+                                self.driver.execute_script("arguments[0].click();", btn)
+                                print('  �?发送按钮已点击（JavaScript�?)
+                                time.sleep(1)
+                                return True
+                            except:
+                                btn.click()
+                                print('  �?发送按钮已点击（常规方法）')
+                                time.sleep(1)
+                                return True
+                except:
+                    continue
+            
+            # 方法3: 模拟按回车键
+            print('  未找到可用按钮，尝试按回车键...')
+            from selenium.webdriver.common.keys import Keys
+            textareas = self.driver.find_elements(By.TAG_NAME, 'textarea')
+            if textareas:
+                print('  在输入框中按回车�?..')
+                textareas[0].send_keys(Keys.RETURN)
+                print('  �?已按回车键发�?)
+                time.sleep(1)
+                return True
+            
+            # 方法4: 使用 JavaScript 触发表单提交
+            print('  尝试使用 JavaScript 触发提交...')
+            self.driver.execute_script("""
+                // 查找输入�?
+                var textarea = document.querySelector('textarea');
+                if (textarea) {
+                    // 触发 Enter 键事�?
+                    var event = new KeyboardEvent('keydown', {
+                        key: 'Enter',
+                        code: 'Enter',
+                        keyCode: 13,
+                        which: 13,
+                        bubbles: true
+                    });
+                    textarea.dispatchEvent(event);
+                }
+            """)
+            print('  �?已触�?Enter 键事�?)
+            time.sleep(1)
+            return True
+            
+        except Exception as e:
+            print(f'  点击发送按钮失�? {e}')
+            import traceback
+            traceback.print_exc()
+            raise
+    
+    def _wait_for_video(self, timeout=600):
+        """等待视频生成完成 - 通过检测输入框是否清空来判�?""
+        print('  等待视频生成...')
+        
+        # 记录开始时已存在的视频 URL，避免检测到旧视�?
+        existing_video_urls = set()
+        try:
+            existing_videos = self.driver.find_elements(By.TAG_NAME, 'video')
+            for video in existing_videos:
+                src = video.get_attribute('src')
+                if src:
+                    existing_video_urls.add(src)
+            if existing_video_urls:
+                print(f'  检测到 {len(existing_video_urls)} 个已存在的视频，将忽�?)
+        except:
+            pass
+        
+        # 记录发送的提示词（用于检测输入框是否清空�?
+        sent_prompt = None
+        try:
+            textareas = self.driver.find_elements(By.TAG_NAME, 'textarea')
+            if textareas:
+                sent_prompt = textareas[0].get_attribute('value') or textareas[0].text
+                print(f'  已记录提示词长度: {len(sent_prompt) if sent_prompt else 0}')
+        except:
+            pass
+        
+        start_time = time.time()
+        last_status = None
+        generation_completed = False
+        
+        while time.time() - start_time < timeout:
+            try:
+                elapsed = int(time.time() - start_time)
+                
+                # 方法1: 检测输入框是否已清空（最可靠的方法）
+                if not generation_completed:
+                    try:
+                        textareas = self.driver.find_elements(By.TAG_NAME, 'textarea')
+                        if textareas:
+                            current_value = textareas[0].get_attribute('value') or textareas[0].text or ''
+                            current_value = current_value.strip()
+                            
+                            # 如果输入框已清空或内容与发送的提示词不同，说明可以输入新内容了
+                            if sent_prompt and len(current_value) == 0:
+                                print('  �?输入框已清空，视频生成完�?)
+                                generation_completed = True
+                                time.sleep(2)  # 等待2秒让视频完全加载
+                            elif elapsed > 10 and len(current_value) == 0:
+                                # 如果10秒后输入框还是空的，也认为完成了
+                                print('  �?输入框为空，视频生成完成')
+                                generation_completed = True
+                                time.sleep(2)
+                    except Exception as e:
+                        if elapsed % 30 == 0:
+                            print(f'  检查输入框时出�? {e}')
+                
+                # 方法2: 检测生成状态文�?
+                try:
+                    status_elements = self.driver.find_elements(By.XPATH, 
+                        "//*[contains(text(), '生成') or contains(text(), 'Generating') or contains(text(), 'Processing') or contains(text(), '%')]")
+                    
+                    current_status = None
+                    for elem in status_elements:
+                        try:
+                            if elem.is_displayed():
+                                status_text = elem.text.strip()
+                                if status_text and len(status_text) < 100:  # 避免获取到长文本
+                                    current_status = status_text
+                                    if status_text != last_status:
+                                        last_status = status_text
+                                        print(f'  �?状�? {status_text}')
+                                    break
+                        except:
+                            pass
+                    
+                    # 如果没有生成状态文本了，可能已完成
+                    if not current_status and elapsed > 10:
+                        if not generation_completed:
+                            print('  �?未检测到生成状态，可能已完�?)
+                            generation_completed = True
+                            time.sleep(2)
+                except:
+                    pass
+                
+                # 方法3: 检查错�?
+                try:
+                    error_keywords = ['错误', 'error', 'Error', '失败', 'failed', 'Failed']
+                    for keyword in error_keywords:
+                        error_elements = self.driver.find_elements(By.XPATH, f"//*[contains(text(), '{keyword}')]")
+                        for elem in error_elements:
+                            if elem.is_displayed():
+                                error_text = elem.text.strip()
+                                if error_text and len(error_text) > 3:
+                                    print(f'  �?检测到错误: {error_text}')
+                                    return {'success': False, 'error': error_text, 'duration': elapsed}
+                except:
+                    pass
+                
+                # 方法4: 验证视频已生�?
+                if generation_completed:
+                    try:
+                        videos = self.driver.find_elements(By.TAG_NAME, 'video')
+                        for video in videos:
+                            src = video.get_attribute('src')
+                            # 必须是新视频（不在已存在列表中）
+                            if src and src not in existing_video_urls:
+                                # 检查是否是有效�?HTTP URL（不�?blob�?
+                                if src.startswith('http') and 'blob:' not in src:
+                                    try:
+                                        # 检查视频是否可以播�?
+                                        duration = self.driver.execute_script("return arguments[0].duration;", video)
+                                        readyState = self.driver.execute_script("return arguments[0].readyState;", video)
+                                        
+                                        # readyState >= 2 表示视频已加载元数据
+                                        # duration > 0 表示视频有有效时�?
+                                        if duration and duration > 0 and readyState >= 2:
+                                            elapsed_time = time.time() - start_time
+                                            print(f'  �?视频生成完成并验证成功！')
+                                            print(f'  总耗时: {elapsed_time:.1f}�?)
+                                            print(f'  视频时长: {duration:.1f}�?)
+                                            print(f'  视频URL: {src[:100]}...')
+                                            return {
+                                                'success': True, 
+                                                'video_url': src, 
+                                                'duration': elapsed_time, 
+                                                'video_duration': duration
+                                            }
+                                        else:
+                                            # 视频还在加载，继续等�?
+                                            if elapsed % 10 == 0:
+                                                print(f'  �?视频加载�?.. (duration={duration}, readyState={readyState})')
+                                            time.sleep(2)
+                                            continue
+                                    except Exception as e:
+                                        if elapsed % 30 == 0:
+                                            print(f'  检查视频状态失�? {e}')
+                    except Exception as e:
+                        if elapsed % 30 == 0:
+                            print(f'  查找视频元素失败: {e}')
+                
+                # �?秒检查一�?
+                time.sleep(5)
+                
+                # 显示等待进度（每30秒）
+                if elapsed % 30 == 0 and elapsed > 0:
+                    status = "验证�? if generation_completed else "生成�?
+                    print(f'  �?{status}... ({elapsed}�?/ {timeout}�?')
+            
+            except Exception as e:
+                print(f'  检查时出错: {e}')
+                import traceback
+                traceback.print_exc()
+                time.sleep(5)
+        
+        return {'success': False, 'error': f'超时 ({timeout}�?', 'duration': timeout}
+    
+    def _download_video(self, video_url):
+        """下载视频"""
+        print('  下载视频...')
+        
+        try:
+            # 使用 JavaScript 触发下载
+            script = f"""
+            var a = document.createElement('a');
+            a.href = '{video_url}';
+            a.download = 'sora-{int(time.time())}.mp4';
+            a.click();
+            """
+            self.driver.execute_script(script)
+            print('  �?下载已触�?)
+            return True
+        except Exception as e:
+            print(f'  下载失败: {e}')
+            return False
+    
+    def generate_video(self, prompt, image=None, auto_download=True):
+        """
+        生成视频
+        
+        Args:
+            prompt: 视频提示�?
+            image: 参考图�?URL（可选）
+            auto_download: 是否自动下载
+        
+        Returns:
+            dict: 生成结果
+        """
+        try:
+            # 1. 打开浏览�?
+            if self.driver is None:
+                self._open_browser()
+            
+            # 2. 导航�?Sora
+            self._navigate_to_sora()
+            
+            # 3. 点击创建按钮
+            self._click_create_button()
+            
+            # 4. 输入提示词并发送（已包含点击和回车发送）
+            self._input_prompt(prompt)
+            
+            # 5. 等待视频生成
+            result = self._wait_for_video()
+            
+            # 7. 下载视频
+            if result['success'] and auto_download:
+                self._download_video(result['video_url'])
+            
+            return result
+        
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
+    
+    def cleanup(self):
+        """清理资源 - 带超时和强制关闭"""
+        print(f'  清理窗口 {self.profile_id} 的资�?..')
+        
+        # 先尝试关闭driver
+        if self.driver:
+            try:
+                print(f'  尝试关闭 driver...')
+                # 设置一个短超时，避免卡�?
+                import signal
+                
+                def timeout_handler(signum, frame):
+                    raise TimeoutError("driver.quit() 超时")
+                
+                # Windows不支持signal.alarm，使用threading.Timer代替
+                import threading
+                
+                quit_success = [False]
+                
+                def quit_driver():
+                    try:
+                        self.driver.quit()
+                        quit_success[0] = True
+                    except:
+                        pass
+                
+                # 启动一个线程来关闭driver，最多等�?�?
+                quit_thread = threading.Thread(target=quit_driver)
+                quit_thread.daemon = True
+                quit_thread.start()
+                quit_thread.join(timeout=3)
+                
+                if quit_success[0]:
+                    print(f'  �?driver 已关�?)
+                else:
+                    print(f'  ⚠️  driver.quit() 超时，强制继�?)
+                    
+            except Exception as e:
+                print(f'  ⚠️  关闭 driver 失败: {e}')
+        
+        # 通过API关闭窗口
+        if self.profile_id:
+            try:
+                print(f'  通过 API 关闭窗口 {self.profile_id}...')
+                result = self.client.close_profile(self.profile_id)
+                if result:
+                    print(f'  �?窗口 {self.profile_id} 已通过API关闭')
+                else:
+                    print(f'  ⚠️  API关闭失败: {self.client.message}')
+            except Exception as e:
+                print(f'  ⚠️  API关闭窗口失败: {e}')
+        
+        print(f'  窗口 {self.profile_id} 清理完成')

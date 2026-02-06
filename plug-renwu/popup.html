@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sora 视频抓包助手</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎬 Sora 视频抓包</h1>
+    </div>
+    
+    <div class="status">
+      <div class="status-item">
+        <span class="label">状态:</span>
+        <span id="status" class="value">运行中</span>
+      </div>
+      <div class="status-item">
+        <span class="label">已捕获:</span>
+        <span id="count" class="value">0</span>
+      </div>
+    </div>
+    
+    <div class="settings">
+      <h2>设置</h2>
+      
+      <div class="setting-item">
+        <label class="switch">
+          <input type="checkbox" id="enabled" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="setting-label">启用抓包</span>
+      </div>
+      
+      <div class="setting-item">
+        <label class="switch">
+          <input type="checkbox" id="autoSend" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="setting-label">自动发送到后端</span>
+      </div>
+      
+      <div class="setting-item">
+        <label for="apiUrl">后端地址:</label>
+        <input type="text" id="apiUrl" value="http://localhost:5000" placeholder="http://localhost:5000">
+      </div>
+      
+      <button id="saveBtn" class="btn btn-primary">保存设置</button>
+    </div>
+    
+    <div class="actions">
+      <button id="viewBtn" class="btn btn-secondary">查看已捕获</button>
+      <button id="clearBtn" class="btn btn-danger">清除数据</button>
+      <button id="exportBtn" class="btn btn-secondary">导出数据</button>
+    </div>
+    
+    <div class="footer">
+      <p>v1.0.0 | 自动抓取 Sora 视频信息</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

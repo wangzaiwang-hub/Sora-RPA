@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "prompt": "一只可爱的小猫在草地上奔跑，阳光明媚，画面温馨",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "美丽的日落景色，海边的浪漫时刻，橙红色的天空",
+      "image": "https://example.com/sunset.jpg",
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "城市夜景，车水马龙的繁华街道，霓虹灯闪烁",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "雪山风光，白雪皑皑的山峰，蓝天白云",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "森林中的小溪，清澈的流水，鸟语花香",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "宇宙星空，璀璨的星河，神秘的太空",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "古老的城堡，欧洲中世纪建筑，历史感十足",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "热带雨林，茂密的植被，各种野生动物",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "现代都市，高楼大厦，科技感十足的未来城市",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    },
+    {
+      "prompt": "海底世界，五彩斑斓的珊瑚礁，各种海洋生物",
+      "image": null,
+      "account_id": null,
+      "profile_id": null
+    }
+  ]
+}

@@ -1,0 +1,749 @@
+{
+  "items": [
+    {
+      "id": "gen_01kgh7mbateya9vpwrr4gac3zy",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/28f199ed66309af_00000000-72b0-7284-a4b4-5a11b1e517bb%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=wMeSKbJ9p7INA8LLyJviqL0KMNGuDi7hv87fSHJ9x%2Bg%3D&ac=oaisdsorprcentralus",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-72b0-7284-a4b4-5a11b1e517bb%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=SAmYdvADvtJY4TFy6IUa5e0ZW2ltukr/rlAKWVLtJ24%3D&ac=oaisdsorprcentralus",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-72b0-7284-a4b4-5a11b1e517bb%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=SAmYdvADvtJY4TFy6IUa5e0ZW2ltukr/rlAKWVLtJ24%3D&ac=oaisdsorprcentralus",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770104973.740952,
+      "prompt": "海底世界，五彩斑斓的珊瑚礁，各种海洋生物",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-72b0-7284-a4b4-5a11b1e517bb%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=SAmYdvADvtJY4TFy6IUa5e0ZW2ltukr/rlAKWVLtJ24%3D&ac=oaisdsorprcentralus",
+          "size": 10463565,
+          "ssim": 0.9920422
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-72b0-7284-a4b4-5a11b1e517bb%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=SAmYdvADvtJY4TFy6IUa5e0ZW2ltukr/rlAKWVLtJ24%3D&ac=oaisdsorprcentralus",
+          "size": 10463565,
+          "ssim": 0.9920422
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/4275c9e28c319e5_00000000-72b0-7284-a4b4-5a11b1e517bb%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=jLWuZKitW9PVaHKZFzofqJQpKdYaQA5UPCPkydb%2B8Cs%3D&ac=oaisdsorprcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/89d15007dc372cd_00000000-aa60-7285-981b-27b082ae9378%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=fSAEWz/r77Izd6EWfZUYFsAb%2BKhmj6riHKR42w%2BGr7A%3D&ac=oaisdsorprnorthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/28f199ed66309af_00000000-72b0-7284-a4b4-5a11b1e517bb%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=wMeSKbJ9p7INA8LLyJviqL0KMNGuDi7hv87fSHJ9x%2Bg%3D&ac=oaisdsorprcentralus",
+          "size": 1022339,
+          "ssim": 0.9296981
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/4fe33a3703adedf_00000000-72b0-7284-a4b4-5a11b1e517bb%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=e3Yv7F8gieV0%2BzLABTrpSmVystXjBuiR59RtOqIXZSY%3D&ac=oaisdsorprcentralus",
+          "size": 728432,
+          "ssim": 0.9158503
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/654fcaa2d21b9e7_00000000-72b0-7284-a4b4-5a11b1e517bb%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=Da1u%2BxPbo80k7FdnHAoau8MMtgXzjdOT9Ebc7MeOZF8%3D&ac=oaisdsorprcentralus",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": false,
+      "task_id": "task_01kgh7ebk8em79bmwj10a6rzav",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "海底世界，五彩斑斓的珊瑚礁，各种海洋生物",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh7mbateya9vpwrr4gac3zy"
+    },
+    {
+      "id": "6981a85470888191a0d1d86b1bc06221",
+      "kind": "sora_content_violation",
+      "width": 352,
+      "height": 640,
+      "created_at": null,
+      "prompt": "宇宙星空，璀璨的星河，神秘的太空",
+      "title": null,
+      "reason": null,
+      "reason_str": "This content may violate our guardrails concerning similarity to third-party content.",
+      "markdown_reason_str": "This content may violate our guardrails concerning similarity to third-party content.",
+      "task_id": "task_01kgh793x5f9a9fdkmhybqyzr1",
+      "draft_reviewed": false,
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "宇宙星空，璀璨的星河，神秘的太空",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "storyboard_id": null,
+      "tags": [],
+      "generation_id": "6981a85470888191a0d1d86b1bc06221",
+      "generation_type": ""
+    },
+    {
+      "id": "gen_01kgh7edtrebbs3p8bw6yv61fz",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/8c2e2cf38f1fbb9_00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=spMTfdJin9zMz55FMnKUdw7ixPVSLePPZeY8r3fPblo%3D&ac=oaisdsorprsouthcentralus",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=6SuYjXbFlFJnLi6CvGiQRL6PA10PbjD4GzLHNgA7/fI%3D&ac=oaisdsorprsouthcentralus",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=6SuYjXbFlFJnLi6CvGiQRL6PA10PbjD4GzLHNgA7/fI%3D&ac=oaisdsorprsouthcentralus",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770104780.377919,
+      "prompt": "古老的城堡，欧洲中世纪建筑，历史感十足",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=6SuYjXbFlFJnLi6CvGiQRL6PA10PbjD4GzLHNgA7/fI%3D&ac=oaisdsorprsouthcentralus",
+          "size": 8811274,
+          "ssim": 0.9929169
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=6SuYjXbFlFJnLi6CvGiQRL6PA10PbjD4GzLHNgA7/fI%3D&ac=oaisdsorprsouthcentralus",
+          "size": 8811274,
+          "ssim": 0.9929169
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/b6cc1b2ea22f7ee_00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=vhzFrLOB5mMRD7q4A4U1mkoC3VLivU6yXVhwngMk7j4%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/7790a5008037c33_00000000-e214-7284-b4b3-6d96ecf185bd%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A31Z&ske=2026-02-10T07%3A15%3A31Z&sks=b&skv=2024-08-04&sig=uZ5giUXzC/f4DiwIopV/WnxsmlZjeMRmjB%2BDhHemaHs%3D&ac=oaisdsorprcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/8c2e2cf38f1fbb9_00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=spMTfdJin9zMz55FMnKUdw7ixPVSLePPZeY8r3fPblo%3D&ac=oaisdsorprsouthcentralus",
+          "size": 1021432,
+          "ssim": 0.9613195
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/110b00072cff3ff_00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=6OcgEskOwtDyn3L54xvgeTYyEpufyizKCL%2BLZxERESQ%3D&ac=oaisdsorprsouthcentralus",
+          "size": 726828,
+          "ssim": 0.9557947
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/72afc9c8c01ff52_00000000-a1e8-7280-98d3-0086b1ac4e6b%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=H%2BXF3MDhtV34zRfgYMjVrmTS3SKqUiX4dOkpgEdTj3I%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": false,
+      "task_id": "task_01kgh7bfpzfawsrady5vgg3ehq",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "古老的城堡，欧洲中世纪建筑，历史感十足",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh7edtrebbs3p8bw6yv61fz"
+    },
+    {
+      "id": "gen_01kgh708x4e65t83d70yvb6pgc",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/aed25bdf475725e_00000000-9450-7282-9050-a636c08cea0b%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=/9vyqqgWnSYFOA3L2N2sizjwuX12WHCkYOigMstAPbs%3D&ac=oaisdsorprwestus",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-9450-7282-9050-a636c08cea0b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=YAHdTOWpqUK6cASuYdOYDDNzAGChpZ/BGB9PDhrYMKg%3D&ac=oaisdsorprwestus",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-9450-7282-9050-a636c08cea0b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=YAHdTOWpqUK6cASuYdOYDDNzAGChpZ/BGB9PDhrYMKg%3D&ac=oaisdsorprwestus",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770104321.871307,
+      "prompt": "热带雨林，茂密的植被，各种野生动物",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-9450-7282-9050-a636c08cea0b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=YAHdTOWpqUK6cASuYdOYDDNzAGChpZ/BGB9PDhrYMKg%3D&ac=oaisdsorprwestus",
+          "size": 9006327,
+          "ssim": 0.9926253
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-9450-7282-9050-a636c08cea0b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=YAHdTOWpqUK6cASuYdOYDDNzAGChpZ/BGB9PDhrYMKg%3D&ac=oaisdsorprwestus",
+          "size": 9006327,
+          "ssim": 0.9926253
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/c7d8bbdb71ce60f_00000000-9450-7282-9050-a636c08cea0b%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=nj1SsvZxRvi6MLgclb%2BFfKWSEs14E%2BQJJMDWjsvTZCA%3D&ac=oaisdsorprwestus",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/c06c1500f1e2a3f_00000000-4850-7282-bacc-ac32987413ae%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=uml5OxKttMjyBuudhFNWbcr/5xa115bf14Tg2B65Sqw%3D&ac=oaisdsorprwestus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/aed25bdf475725e_00000000-9450-7282-9050-a636c08cea0b%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=/9vyqqgWnSYFOA3L2N2sizjwuX12WHCkYOigMstAPbs%3D&ac=oaisdsorprwestus",
+          "size": 1034983,
+          "ssim": 0.9508916
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/7bb341a2a95f5a5_00000000-9450-7282-9050-a636c08cea0b%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=CZp9nUETehe4spYXrfu5cVjNNFHI/OkV7Y49B2SIHNU%3D&ac=oaisdsorprwestus",
+          "size": 740927,
+          "ssim": 0.9462546
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/6b63779095b574e_00000000-9450-7282-9050-a636c08cea0b%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=zkgnzHYIgmL3Q0lMP2ZOwkMZhfIEujQ97cQeawAROCM%3D&ac=oaisdsorprwestus",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": true,
+      "task_id": "task_01kgh6sn63exj9gz591r12xnnr",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "热带雨林，茂密的植被，各种野生动物",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh708x4e65t83d70yvb6pgc"
+    },
+    {
+      "id": "gen_01kgh6z4q2feeb8t9fjjtspseh",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/fb3f9c8a798e5ff_00000000-e530-7285-8d15-49d2a4582668%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=klLtCQ980wQKmENRxnRad/EVnn3TAfWmKnzPqTTaO9Y%3D&ac=oaisdsorprnorthcentralus",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-e530-7285-8d15-49d2a4582668%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=UU9KYoMpSA4ttyDi/5ETyuGER8B9uMDtUZD0h5CPyq4%3D&ac=oaisdsorprnorthcentralus",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-e530-7285-8d15-49d2a4582668%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=UU9KYoMpSA4ttyDi/5ETyuGER8B9uMDtUZD0h5CPyq4%3D&ac=oaisdsorprnorthcentralus",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770104281.218037,
+      "prompt": "森林中的小溪，清澈的流水，鸟语花香",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-e530-7285-8d15-49d2a4582668%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=UU9KYoMpSA4ttyDi/5ETyuGER8B9uMDtUZD0h5CPyq4%3D&ac=oaisdsorprnorthcentralus",
+          "size": 9288988,
+          "ssim": 0.9908274
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-e530-7285-8d15-49d2a4582668%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=UU9KYoMpSA4ttyDi/5ETyuGER8B9uMDtUZD0h5CPyq4%3D&ac=oaisdsorprnorthcentralus",
+          "size": 9288988,
+          "ssim": 0.9908274
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/5dcbc02fffc4bd3_00000000-e530-7285-8d15-49d2a4582668%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=xh3n2/5HSNOISFxNRp7uQGsh%2BtG7/kbOgFBk7qloNbQ%3D&ac=oaisdsorprnorthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/db6c73fe0eeb746_00000000-0b68-7280-b628-3e88f52cc44d%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=Zdchmio8yQl%2B6BU6CaToEzDoRmRnsKpTqeVAqplArcQ%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/fb3f9c8a798e5ff_00000000-e530-7285-8d15-49d2a4582668%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=klLtCQ980wQKmENRxnRad/EVnn3TAfWmKnzPqTTaO9Y%3D&ac=oaisdsorprnorthcentralus",
+          "size": 1028023,
+          "ssim": 0.9338459
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/42d326e825b5f99_00000000-e530-7285-8d15-49d2a4582668%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=z5XQb1Goit1FFqLLMzD7sUWI5u0YcQs/AS7atU6nw8w%3D&ac=oaisdsorprnorthcentralus",
+          "size": 736669,
+          "ssim": 0.9264151
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/6b27ccaa16e0a3a_00000000-e530-7285-8d15-49d2a4582668%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=wgmEdRysS6CSZTu3TeckslnatGcyODhl5sNK6pA3OpU%3D&ac=oaisdsorprnorthcentralus",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": true,
+      "task_id": "task_01kgh6w77ef8etvkw88vztme7b",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "森林中的小溪，清澈的流水，鸟语花香",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh6z4q2feeb8t9fjjtspseh"
+    },
+    {
+      "id": "gen_01kgh1vmctemr8fs5cptammdba",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/dc495f5dc810c13_00000000-8cd4-7282-a78f-f87c85feb2a1%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=imTIqZmE3MGP5rJKisYRLyJM2Bs7Y4zQgk8D/BfojMs%3D&ac=oaisdsorprwestus",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-8cd4-7282-a78f-f87c85feb2a1%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=4KzPv84%2BH99NHxefoZnH346VJDdXteiXqwK2DfoLU2o%3D&ac=oaisdsorprwestus",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-8cd4-7282-a78f-f87c85feb2a1%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=4KzPv84%2BH99NHxefoZnH346VJDdXteiXqwK2DfoLU2o%3D&ac=oaisdsorprwestus",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770098922.423668,
+      "prompt": "原神全角色大战",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-8cd4-7282-a78f-f87c85feb2a1%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=4KzPv84%2BH99NHxefoZnH346VJDdXteiXqwK2DfoLU2o%3D&ac=oaisdsorprwestus",
+          "size": 9982675,
+          "ssim": 0.9923995
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-8cd4-7282-a78f-f87c85feb2a1%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=4KzPv84%2BH99NHxefoZnH346VJDdXteiXqwK2DfoLU2o%3D&ac=oaisdsorprwestus",
+          "size": 9982675,
+          "ssim": 0.9923995
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/c2de7a978f24a5f_00000000-8cd4-7282-a78f-f87c85feb2a1%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=60m1yRSunU9vk4fFyuG0OLPqMOYRE/jg2Iqv9TPbMsQ%3D&ac=oaisdsorprwestus",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/6a590a1136a07db_00000000-8de0-7280-97da-cde88ecc0b7c%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=YqmWFSPp0aitVEcKUiqFzlr7eOb2r581a5iPu23NK%2BI%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/dc495f5dc810c13_00000000-8cd4-7282-a78f-f87c85feb2a1%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=imTIqZmE3MGP5rJKisYRLyJM2Bs7Y4zQgk8D/BfojMs%3D&ac=oaisdsorprwestus",
+          "size": 1018891,
+          "ssim": 0.9329733
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/c70691628e3fc67_00000000-8cd4-7282-a78f-f87c85feb2a1%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=qD%2B7ildhsVs2eErheE3xlyO6R0dhtyWy58juS%2BjyEqY%3D&ac=oaisdsorprwestus",
+          "size": 725966,
+          "ssim": 0.9138737
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/338878c767f8135_00000000-8cd4-7282-a78f-f87c85feb2a1%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=nViXz0EqaVOv8DQUEFNyHVKdrlyk3E15AQVDayZaa3Q%3D&ac=oaisdsorprwestus",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": true,
+      "task_id": "task_01kgh1rb8zee08n3vy7ds1r7c2",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "原神全角色大战",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh1vmctemr8fs5cptammdba"
+    },
+    {
+      "id": "gen_01kgh1msxbe63sgbrq00vbbqky",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/ead2ec3e25459bf_00000000-5a54-7283-bde7-82c48f723a7f%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=5jkynQdjMeAxp/JtzPoHd5D0dbmYUFC0tmWnOQDuMzc%3D&ac=oaisdsorprwestus2",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-5a54-7283-bde7-82c48f723a7f%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=uux/TJEIFmPy3Sa/lgBb9Q0CEVlRcEUge1J56qkc0wg%3D&ac=oaisdsorprwestus2",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-5a54-7283-bde7-82c48f723a7f%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=uux/TJEIFmPy3Sa/lgBb9Q0CEVlRcEUge1J56qkc0wg%3D&ac=oaisdsorprwestus2",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770098708.83464,
+      "prompt": "一个中国女孩在赏花",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-5a54-7283-bde7-82c48f723a7f%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=uux/TJEIFmPy3Sa/lgBb9Q0CEVlRcEUge1J56qkc0wg%3D&ac=oaisdsorprwestus2",
+          "size": 6654585,
+          "ssim": 0.9935296
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-5a54-7283-bde7-82c48f723a7f%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=uux/TJEIFmPy3Sa/lgBb9Q0CEVlRcEUge1J56qkc0wg%3D&ac=oaisdsorprwestus2",
+          "size": 6654585,
+          "ssim": 0.9935296
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/3bc51568d64fdd0_00000000-5a54-7283-bde7-82c48f723a7f%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=kCX1nZbZbnACcl8pYC7/vl8cKLnt2u%2B2byCo9XErziY%3D&ac=oaisdsorprwestus2",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/2d9d469f3579c46_00000000-4294-7285-911f-900946cbed4d%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=pylZXDIjXjMC/6%2BI1stD1BFgoyP3bsf4qiwStTFOAgk%3D&ac=oaisdsorprnorthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/ead2ec3e25459bf_00000000-5a54-7283-bde7-82c48f723a7f%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=5jkynQdjMeAxp/JtzPoHd5D0dbmYUFC0tmWnOQDuMzc%3D&ac=oaisdsorprwestus2",
+          "size": 1033413,
+          "ssim": 0.9757481
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/af0c1ed72f785f0_00000000-5a54-7283-bde7-82c48f723a7f%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=6s5SN6VysrC7U0xzD1WGv4mSnra8EkoYBw4ZBGEB9Tk%3D&ac=oaisdsorprwestus2",
+          "size": 739497,
+          "ssim": 0.9727263
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/45bbc14dc8d5be1_00000000-5a54-7283-bde7-82c48f723a7f%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=d5xubo%2BVDQiy51dqby2OUg7HEx72lcv36Z5bbvhogA8%3D&ac=oaisdsorprwestus2",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": false,
+      "task_id": "task_01kgh1h7ccf2qtyhz4jmmwegyc",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "一个中国女孩在赏花",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh1msxbe63sgbrq00vbbqky"
+    },
+    {
+      "id": "gen_01kgh1cngbf5nswx5cfxzct8z2",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/8b3bf869d6a50f0_00000000-bfc4-7280-a7d6-a7add01498cf%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=%2BCNouHQu943guj0A/stqLAryo1b1gSllA/FWx3R3SDw%3D&ac=oaisdsorprsouthcentralus",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-bfc4-7280-a7d6-a7add01498cf%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=DCXRHbJKjZ9xpqSD0lglZDag%2BAs6h/tpvQVt0sRGlQk%3D&ac=oaisdsorprsouthcentralus",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-bfc4-7280-a7d6-a7add01498cf%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=DCXRHbJKjZ9xpqSD0lglZDag%2BAs6h/tpvQVt0sRGlQk%3D&ac=oaisdsorprsouthcentralus",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770098437.161769,
+      "prompt": "一个女孩在跳舞打招呼",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-bfc4-7280-a7d6-a7add01498cf%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=DCXRHbJKjZ9xpqSD0lglZDag%2BAs6h/tpvQVt0sRGlQk%3D&ac=oaisdsorprsouthcentralus",
+          "size": 7035131,
+          "ssim": 0.9941863
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-bfc4-7280-a7d6-a7add01498cf%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=DCXRHbJKjZ9xpqSD0lglZDag%2BAs6h/tpvQVt0sRGlQk%3D&ac=oaisdsorprsouthcentralus",
+          "size": 7035131,
+          "ssim": 0.9941863
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/252f5c3df473254_00000000-bfc4-7280-a7d6-a7add01498cf%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=QH/PCabdaon92h8nOdHqoqAyWVLt7XHHVJIY3qkmUlQ%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/400fb7bdb198888_00000000-9e94-7280-b8a8-e878f8dd7a73%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=rbOMfVseORJfDQgaWKg4AfsgHVgwWrHCnnV3tcoy5K8%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/8b3bf869d6a50f0_00000000-bfc4-7280-a7d6-a7add01498cf%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=%2BCNouHQu943guj0A/stqLAryo1b1gSllA/FWx3R3SDw%3D&ac=oaisdsorprsouthcentralus",
+          "size": 1021745,
+          "ssim": 0.979665
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/394d621aa765f59_00000000-bfc4-7280-a7d6-a7add01498cf%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=kXm8044MsVsWu7oJD/uzdDpFdJKBoteZDOPsTvnO8v0%3D&ac=oaisdsorprsouthcentralus",
+          "size": 727120,
+          "ssim": 0.9754506
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/78bad9b164e598c_00000000-bfc4-7280-a7d6-a7add01498cf%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=8trXL8jkABIHuVZR2gdVljarzokB1flnsWucP9DV5sM%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": false,
+      "task_id": "task_01kgh19109e45v7bea9ng9k4s8",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "一个女孩在跳舞打招呼",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kgh1cngbf5nswx5cfxzct8z2"
+    },
+    {
+      "id": "gen_01kggvdnhce1m9fr8xv7kt1fzc",
+      "kind": "sora_draft",
+      "url": "https://videos.openai.com/az/files/211db79e60815b3_00000000-d264-7283-8c93-1b5c7442b85b%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=kvgwRSvAYvGcBmDsteiCXExPWSUOHCXNkKcwJvoM2l8%3D&ac=oaisdsorprwestus2",
+      "downloadable_url": "https://videos.openai.com/az/files/00000000-d264-7283-8c93-1b5c7442b85b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=bV2xnlISuPYkWHSxn13hoVXahSH3mT%2Bhme1hMsVBzJo%3D&ac=oaisdsorprwestus2",
+      "download_urls": {
+        "watermark": "https://videos.openai.com/az/files/00000000-d264-7283-8c93-1b5c7442b85b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=bV2xnlISuPYkWHSxn13hoVXahSH3mT%2Bhme1hMsVBzJo%3D&ac=oaisdsorprwestus2",
+        "no_watermark": null,
+        "endcard_watermark": null
+      },
+      "width": 352,
+      "height": 640,
+      "generation_type": "video_gen",
+      "created_at": 1770092174.723288,
+      "prompt": "nihao",
+      "title": null,
+      "encodings": {
+        "source": {
+          "path": "https://videos.openai.com/az/files/00000000-d264-7283-8c93-1b5c7442b85b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=bV2xnlISuPYkWHSxn13hoVXahSH3mT%2Bhme1hMsVBzJo%3D&ac=oaisdsorprwestus2",
+          "size": 6174202,
+          "ssim": 0.9934586
+        },
+        "source_wm": {
+          "path": "https://videos.openai.com/az/files/00000000-d264-7283-8c93-1b5c7442b85b%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=bV2xnlISuPYkWHSxn13hoVXahSH3mT%2Bhme1hMsVBzJo%3D&ac=oaisdsorprwestus2",
+          "size": 6174202,
+          "ssim": 0.9934586
+        },
+        "endcard_wm": null,
+        "thumbnail": {
+          "path": "https://videos.openai.com/az/files/18e95fed2fdead7_00000000-d264-7283-8c93-1b5c7442b85b%2Fdrvs%2Fthumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=OzI/fJA7%2B4AGJENhTRW1CHouWkRvDW2Ji8dXKch%2B9Hs%3D&ac=oaisdsorprwestus2",
+          "size": null,
+          "ssim": null
+        },
+        "unfurl": {
+          "path": "https://videos.openai.com/az/files/f471bec7da65161_00000000-5a5c-7280-bb4f-5b6525422218%2Fdrvs%2Flink_thumbnail%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=zoM5%2BWxPxM4rYAkrSgZnPSVTJQzFCQZ7lcfIvDBuzRo%3D&ac=oaisdsorprsouthcentralus",
+          "size": null,
+          "ssim": null
+        },
+        "md": {
+          "path": "https://videos.openai.com/az/files/211db79e60815b3_00000000-d264-7283-8c93-1b5c7442b85b%2Fdrvs%2Fmd%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=kvgwRSvAYvGcBmDsteiCXExPWSUOHCXNkKcwJvoM2l8%3D&ac=oaisdsorprwestus2",
+          "size": 1018321,
+          "ssim": 0.984021
+        },
+        "ld": {
+          "path": "https://videos.openai.com/az/files/4426e535cf910f6_00000000-d264-7283-8c93-1b5c7442b85b%2Fdrvs%2Fld%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=RL3BXxHmzyPFKolSBSp6gB1IWeKshH83qW/E35p3N5I%3D&ac=oaisdsorprwestus2",
+          "size": 725994,
+          "ssim": 0.9822626
+        },
+        "gif": {
+          "path": "https://videos.openai.com/az/files/9be97b82e3acee8_00000000-d264-7283-8c93-1b5c7442b85b%2Fdrvs%2Fgif%2Fraw?se=2026-02-06T00%3A00%3A00Z&sp=r&sv=2024-08-04&sr=b&skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-02-03T07%3A10%3A32Z&ske=2026-02-10T07%3A15%3A32Z&sks=b&skv=2024-08-04&sig=q6Wfzn%2BHLa5ld7sOVhtelatrx%2BkPuDNKprUEf9WbkvU%3D&ac=oaisdsorprwestus2",
+          "size": null,
+          "ssim": null
+        }
+      },
+      "draft_reviewed": false,
+      "task_id": "task_01kggvabmdfmqsee892d6551ap",
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "nihao",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "can_remix": true,
+      "can_extend": true,
+      "can_storyboard": true,
+      "storyboard_id": null,
+      "can_create_character": true,
+      "post_visibility": null,
+      "post": null,
+      "unwrap": null,
+      "shot_data": null,
+      "operations": null,
+      "rooted_project": null,
+      "tags": [],
+      "generation_id": "gen_01kggvdnhce1m9fr8xv7kt1fzc"
+    },
+    {
+      "id": "69815cacb4848191b5f8a244c4e315a1",
+      "kind": "sora_content_violation",
+      "width": 352,
+      "height": 640,
+      "created_at": null,
+      "prompt": "宇宙星空，璀璨的星河，神秘的太空",
+      "title": null,
+      "reason": null,
+      "reason_str": "This content may violate our guardrails concerning similarity to third-party content.",
+      "markdown_reason_str": "This content may violate our guardrails concerning similarity to third-party content.",
+      "task_id": "task_01kggmwc58fskam238r61hwj9e",
+      "draft_reviewed": false,
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "宇宙星空，璀璨的星河，神秘的太空",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "storyboard_id": null,
+      "tags": [],
+      "generation_id": "69815cacb4848191b5f8a244c4e315a1",
+      "generation_type": ""
+    },
+    {
+      "id": "6980711aee548191ab72651e1a9f032b",
+      "kind": "sora_error",
+      "width": 352,
+      "height": 640,
+      "created_at": null,
+      "prompt": "12\n2\n",
+      "title": null,
+      "task_id": "task_01kgetew71fwybv1cy1d65845b",
+      "draft_reviewed": false,
+      "error_reason": null,
+      "creation_config": {
+        "remix_target_post": null,
+        "style": null,
+        "inpaint_image": null,
+        "prompt": "12\n2\n",
+        "task_id": null,
+        "cameo_profiles": null,
+        "orientation": "portrait",
+        "n_frames": 300,
+        "storyboard_id": null,
+        "editing_config": null
+      },
+      "storyboard_id": null,
+      "tags": [],
+      "generation_id": "6980711aee548191ab72651e1a9f032b",
+      "generation_type": ""
+    }
+  ],
+  "cursor": null
+}

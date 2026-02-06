@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sora Auto Publisher</title>
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+    
+    h2 {
+      margin: 0 0 15px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .status {
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .status.idle {
+      background: #e3f2fd;
+      color: #1976d2;
+    }
+    
+    .status.processing {
+      background: #fff3e0;
+      color: #f57c00;
+    }
+    
+    .info {
+      margin-bottom: 15px;
+    }
+    
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .info-label {
+      color: #666;
+      font-size: 14px;
+    }
+    
+    .info-value {
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    
+    .btn-secondary {
+      background: #48bb78;
+      color: white;
+    }
+    
+    .btn-danger {
+      background: #f56565;
+      color: white;
+    }
+    
+    .log {
+      margin-top: 15px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    
+    .log-item {
+      margin: 3px 0;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h2>🚀 Sora Auto Publisher</h2>
+  
+  <div id="status" class="status idle">
+    ⏸️ 空闲中
+  </div>
+  
+  <div class="info">
+    <div class="info-item">
+      <span class="info-label">队列中的草稿:</span>
+      <span class="info-value" id="queueLength">0</span>
+    </div>
+    <div class="info-item">
+      <span class="info-label">当前标签页:</span>
+      <span class="info-value" id="currentTab">无</span>
+    </div>
+  </div>
+  
+  <div class="buttons">
+    <button id="refreshBtn" class="btn-secondary">刷新队列</button>
+    <button id="startBtn" class="btn-primary">开始发布</button>
+    <button id="stopBtn" class="btn-danger" disabled>停止</button>
+  </div>
+  
+  <div class="log" id="log">
+    <div class="log-item">等待操作...</div>
+  </div>
+  
+  <script src="popup-auto.js"></script>
+</body>
+</html>
